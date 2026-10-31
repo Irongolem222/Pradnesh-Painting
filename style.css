@@ -21,17 +21,15 @@ body {
 .painting {
     position:absolute;
     padding: 0;
-    border: 4px solid #c9a24b;
-    background-size: 100% 100%;
-    image-rendering:pixelated;
+    border: none;
+    background: transparent;
     cursor:pointer;
-    transition: transform 0.15s;
 }
 
 .painting:hover,
-.painting:focus-visible {
-    transform: scale(1.08);
-    outline: 3px solid #fff;
+.painting:focus-visible ,
+.painting.active {
+    outline: 3px solid #ffd36b;
 }
 
 

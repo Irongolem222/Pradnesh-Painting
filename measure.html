@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <title>Measure</title>
+    <style>
+      body { margin: 0; background: #222; color: #fff; font-family: monospace; }
+      #out {padding: 12px; font-size: 20px; }
+      #box {
+        position: relative;
+        width :min(100%, 1200px);
+        aspect-ratio: 16/9;
+        margin: 0 auto;
+        background: url("BGWEB.png") 0 0/ 100% 100%;
+        cursor: crosshair;
+      }
+      #sel {
+          position: absolute;
+          border: 2px solid lime;
+          background: rgba(0, 255, 0, 0.25);
+          pointer-events: none;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="out">Drag a box over a painting</div>
+    <div id="box"><div id="sel"></div></div>
+
+
+    <script>
+       const box = document.getElementById("box");
+       const sel = document.getElementById("sel");
+       const out = document.getElementById("out");
+       let startX = 0, startY = 0, dragging = false;
+
+       function pos(e)  { 
+        const r = box.getBoundingClientRect();
+        return {
+           x: Math.min(Math.max((e.clientX - r.left) / r.width * 100, 0), 100),
+           y: Math.min(Math.max((e.clientY - r.top) / r.height *100, 0), 100)
+        };
+       }
+       
+
+       box.addEventListener("mousedown", function (e) {
+         const p = pos(e);
+         startX = p.x;
+         startY = p.y;
+         dragging = true;
+         e.preventDefault();
+       });
+
+
+       window.addEventListener("mousemove", function (e){
+        if (!dragging) return;
+        const p = pos(e);
+        const x = Math.min(startX, p.x);
+        const y = Math.min(startY, p.y);
+        const w = Math.abs(p.x - startX);
+        const h = Math.abs(p.y - startY);
+        sel.style.left = x + "%";
+        sel.style.top = y + "%";
+        sel.style.width = w + "%";
+        sel.style.height = h + "%";
+        out.textContent = "x: " + x.toFixed(1) + ", y: " + y.toFixed(1) +
+                          ", w: " + w.toFixed(1) + ", h: " + h.toFixed(1);
+    });
+
+
+    window.addEventListener("mouseup", function () { dragging = false; });
+    </script>
+</body>
+</html>
