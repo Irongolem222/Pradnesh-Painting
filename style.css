@@ -1,0 +1,48 @@
+body {
+    margin:0;
+    padding: 16px;
+    background: #1a1423;
+    color: #d5ecee;
+    font-family: "Courier New", monospace;
+    text-align: center;
+}
+
+.museum {
+    position: relative;
+    width:min(100%, 900px);
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+    background-color: #3b2f4a;
+    background-image: url("images/museum.png");
+    background-size: 100% 100%;
+    image-rendering:pixelated;
+}
+
+.painting {
+    position:absolute;
+    padding: 0;
+    border: 4px solid #c9a24b;
+    background-size: 100% 100%;
+    image-rendering:pixelated;
+    cursor:pointer;
+    transition: transform 0.15s;
+}
+
+.painting:hover,
+.painting:focus-visible {
+    transform: scale(1.08);
+    outline: 3px solid #fff;
+}
+
+
+.info {
+    width: min(100%, 900px);
+    margin: 16px auto 0;
+    padding: 16px;
+    box-sizing:border-box;
+    border: 4px solid #c9a24b;
+    background: #2a2036;
+    text-align: left;
+}
+
+.info a {color: #ffd36b; }
