@@ -1,19 +1,19 @@
 const painting = [
   {
-    title: "Personal Site",
-    text: "My First Website",
+    title: "Entering dimension",
+    text: "My First Website, it all started here .Vintage heritage  ",
     link: "https://github.com/Irongolem222/Entering-dimension",
     x: 13.3, y: 18.4, w: 16.3, h: 14.1
   },
   {
     title: "Receipt Challenge",
-    text: "A bad piggies-themed p5.js receipt for hackclub.",
+    text: "A bad piggies-themed p5.js receipt for hackclub. i used to play bad piggies when i was like 5 so this is also important ",
     link: "https://receipt.hackclub.com/gallery#irongolem222/receipt",
     x: 73.6, y: 16.9, w: 7.3, h: 37.0
   },
   {
     title: "Repossessed",
-    text: "A little guy themed mummy platform game. I did the pixel art.",
+    text: "A little guy themed mummy platform game. I did the pixel art.My first Game jam , teamed with great people and loved every possible sec and learned so much",
     link: "https://irongolem222.itch.io/repossessed",
     x: 40.8, y: 37.0, w: 20.5, h: 23.4
   },
