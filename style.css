@@ -13,7 +13,7 @@ body {
     aspect-ratio: 16/9;
     margin: 0 auto;
     background-color: #3b2f4a;
-    background-image: url("images/museum.png");
+    background-image: url("BGWEB.png");
     background-size: 100% 100%;
     image-rendering:pixelated;
 }
